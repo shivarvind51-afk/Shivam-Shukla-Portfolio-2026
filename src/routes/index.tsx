@@ -34,9 +34,9 @@ const roles = [
 const projects = [
   { name: "Boka Wellness", type: "Wellness", scope: "Complete design & development", detail: "From-zero UX, theme architecture, subscription collections, product pages and a conversion-ready checkout journey.", url: "https://boka.com" },
   { name: "Milano Wigs", type: "Beauty & Fashion", scope: "Complete design & development", detail: "Custom product and collection templates for a complex variant catalog, built around performance and mobile UX.", url: "https://milanowigs.com" },
-  { name: "Taza Chocolate", type: "Food & Beverage", scope: "Complete store build", detail: "Custom Liquid storefront balancing a media-rich product catalog with fast load times and responsive architecture.", url: "https://tazachocolate.com" },
+   { name: "The Bare Bar", type: "Wellness", scope: "Theme customization", detail: "Sleek-theme customization aligned to a considered wellness positioning.", url: "https://thebarebar.in" },
   { name: "Mookuthi", type: "Jewellery", scope: "International store build", detail: "US storefront with Markets localization, Razorpay Magic Checkout, Google Login, PDF downloads and consultation booking. Added interactive Add to cart % Buy Now buttons on the product page.", url: "https://mookuthi.com" },
-  { name: "PotGang", type: "Home & Lifestyle", scope: "Complete store build", detail: "End-to-end UK launch with custom theme sections, collection structure, performance and technical SEO.", url: "https://potgang.co.uk" },
+  
   { name: "AZGA", type: "Jewellery", scope: "Mega menu, CRO & redesign", detail: "A custom catalog navigation system paired with conversion work and a complete visual storefront revamp.", url: "https://azga.in" },
   { name: "Meera's Plus Size Store", type: "Fashion", scope: "Sale experience", detail: "Dynamic filters, price-reveal logic, wishlist, login restrictions and Boost Commerce collection search.", url: "https://meerasplussizestore.com" },
   { name: "Taho Living", type: "Furniture", scope: "Complete store build", detail: "From-scratch theme development with custom sections, responsive collection structure, SEO and performance work.", url: "https://taholiving.com" },
@@ -45,14 +45,12 @@ const projects = [
   { name: "Ruhe India", type: "Home & Lifestyle", scope: "Management & CRO", detail: "Continuous testing, storefront updates, conversion improvements and technical SEO supporting D2C growth.", url: "https://ruheindia.com" },
   { name: "Arcano Cap", type: "Fashion & Headwear", scope: "Custom development", detail: "Theme customization and storefront enhancements supporting the product catalog and checkout experience.", url: "https://arcanocap.com" },
   { name: "EGOSS", type: "Footwear", scope: "Sale-event development", detail: "A Prestige-theme sale experience engineered for high-traffic promotional periods.", url: "https://egoss.in" },
-  { name: "LeShva", type: "Fashion", scope: "Custom development", detail: "Custom Shopify development delivered on the Envy theme.", url: "https://leshva.com" },
-  { name: "The Bare Bar", type: "Wellness", scope: "Theme customization", detail: "Sleek-theme customization aligned to a considered wellness positioning.", url: "https://thebarebar.in" },
+   { name: "Saunakits", type: "Outdoor Furnitures", scope: "Custom development", detail: "Custom Shopify development delivered on the custom theme.", url: "https://saunakits.com/?" },
   { name: "Drizz", type: "Web Design", scope: "Webflow build", detail: "An end-to-end Webflow design and development project extending beyond the Shopify ecosystem.", url: "https://drizz.dev" },
   { name: "Nilkamal BubbleGuard", type: "Industrial Products", scope: "Enterprise store build", detail: "Enterprise-level custom Shopify development for a complex industrial products catalog.", url: "https://nilkamalbubbleguard.com" },
   { name: "Earth Rhythm", type: "Skincare", scope: "Ongoing maintenance", detail: "Prestige-theme performance monitoring, updates and ongoing storefront health checks.", url: "https://earthrhythm.com" },
-  { name: "Traya Health", type: "Wellness", scope: "Maintenance & performance", detail: "Ongoing optimization and store-health monitoring on the Refresh theme.", url: "https://traya.health" },
-  { name: "Suta", type: "Fashion", scope: "Web development", detail: "Shopify web development contributions across the live fashion storefront.", url: "https://suta.in" },
-  { name: "CuddleFields", type: "Kids' Fashion", scope: "Custom development", detail: "Custom Shopify development delivered on the Capital theme.", url: "https://cuddlefields.com" },
+  { name: "LeShva", type: "Fashion", scope: "Custom development", detail: "Custom Shopify development delivered on the Envy theme.", url: "https://leshva.com" },
+  { name: "Cuddle Fields", type: "Kids' Fashion", scope: "Custom development", detail: "Custom Shopify development delivered on the Capital theme.", url: "https://cuddlefields.com" }
 ];
 
 const experience = [
