@@ -1,11 +1,11 @@
 import { n as __toESM } from "../_runtime.mjs";
 import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].mjs";
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
-import { a as MapPin, c as ExternalLink, d as ArrowDown, i as MoveRight, l as Earth, n as Smartphone, o as Mail, r as RotateCw, s as Laptop, t as Tablet, u as ArrowUpRight } from "../_libs/lucide-react.mjs";
+import { a as MoveRight, c as Laptop, d as Earth, f as ArrowUpRight, i as RotateCw, l as Eye, n as Tablet, o as MapPin, p as ArrowDown, r as Smartphone, s as Mail, t as X, u as ExternalLink } from "../_libs/lucide-react.mjs";
 import { t as Slot } from "../_libs/radix-ui__react-slot.mjs";
 import { n as clsx, t as cva } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-B-4-VtiN.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-KUyvzFYd.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function cn(...inputs) {
@@ -53,14 +53,6 @@ var roles = [
 ];
 var projects = [
 	{
-		name: "Boka Wellness",
-		type: "Wellness",
-		scope: "Complete design & development",
-		detail: "From-zero UX, theme architecture, subscription collections, product pages and a conversion-ready checkout journey.",
-		url: "https://boka.com",
-		embeddable: false
-	},
-	{
 		name: "Milano Wigs",
 		type: "Beauty & Fashion",
 		scope: "Complete design & development",
@@ -101,6 +93,14 @@ var projects = [
 		scope: "Complete store build",
 		detail: "From-scratch theme development with custom sections, responsive collection structure, SEO and performance work.",
 		url: "https://taholiving.com"
+	},
+	{
+		name: "Boka Wellness",
+		type: "Wellness",
+		scope: "Complete design & development",
+		detail: "From-zero UX, theme architecture, subscription collections, product pages and a conversion-ready checkout journey.",
+		url: "https://boka.com",
+		embeddable: false
 	},
 	{
 		name: "Gillori",
@@ -250,12 +250,32 @@ function Portfolio() {
 	const [activeProjectIndex, setActiveProjectIndex] = (0, import_react.useState)(0);
 	const [previewKey, setPreviewKey] = (0, import_react.useState)(0);
 	const [previewLoading, setPreviewLoading] = (0, import_react.useState)(true);
+	const [isPreviewOpen, setIsPreviewOpen] = (0, import_react.useState)(false);
 	const activeProject = projects[activeProjectIndex] ?? {
 		name: "Boka Wellness",
 		type: "Wellness",
 		scope: "Complete design & development",
 		detail: "From-zero UX, theme architecture, subscription collections, product pages and a conversion-ready checkout journey.",
 		url: "https://boka.com"
+	};
+	const showProjectPreview = (index) => {
+		setActiveProjectIndex(index);
+		setIsPreviewOpen(true);
+		if (window.matchMedia("(max-width: 1260px)").matches) window.requestAnimationFrame(() => {
+			document.getElementById("live-preview")?.scrollIntoView({
+				behavior: "smooth",
+				block: "center"
+			});
+		});
+	};
+	const closeProjectPreview = () => {
+		setIsPreviewOpen(false);
+		if (window.matchMedia("(max-width: 1260px)").matches) window.requestAnimationFrame(() => {
+			document.querySelector(`[data-project-index="${activeProjectIndex}"]`)?.scrollIntoView({
+				behavior: "smooth",
+				block: "center"
+			});
+		});
 	};
 	(0, import_react.useEffect)(() => {
 		const root = pageRef.current;
@@ -275,6 +295,7 @@ function Portfolio() {
 		if (!root) return;
 		const chapters = root.querySelectorAll("[data-project-index]");
 		const observer = new IntersectionObserver((entries) => {
+			if (isPreviewOpen) return;
 			const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 			if (!visible) return;
 			const nextIndex = Number(visible.target.dataset["projectIndex"]);
@@ -289,7 +310,7 @@ function Portfolio() {
 		});
 		chapters.forEach((chapter) => observer.observe(chapter));
 		return () => observer.disconnect();
-	}, []);
+	}, [isPreviewOpen]);
 	(0, import_react.useEffect)(() => {
 		setPreviewLoading(true);
 	}, [activeProjectIndex, previewKey]);
@@ -489,7 +510,7 @@ function Portfolio() {
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "21 projects / one continuous journey" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Keep scrolling. Each chapter brings a new live storefront into focus—without taking you away from the portfolio." })]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "project-story",
+							className: `project-story ${isPreviewOpen ? "preview-is-open" : ""}`,
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "project-chapters",
 								children: projects.map((project, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
@@ -515,15 +536,29 @@ function Portfolio() {
 											className: "chapter-impact",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "THE BUILD" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Purposeful interaction, clear hierarchy and commerce engineering working as one connected system." })]
 										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-											href: project.url,
-											target: "_blank",
-											rel: "noreferrer",
-											children: ["Visit live website ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { size: 16 })]
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "project-actions",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+												href: project.url,
+												target: "_blank",
+												rel: "noreferrer",
+												children: ["Visit live website ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { size: 16 })]
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
+												type: "button",
+												variant: "ghost",
+												className: "project-preview-trigger",
+												"aria-controls": "live-preview",
+												onClick: (event) => {
+													event.stopPropagation();
+													showProjectPreview(index);
+												},
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Eye, { size: 16 }), " Preview"]
+											})]
 										})
 									]
 								}, project.name))
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("aside", {
+								id: "live-preview",
 								className: "live-workbench",
 								"aria-live": "polite",
 								children: [
@@ -533,11 +568,23 @@ function Portfolio() {
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Earth, { size: 14 }),
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Live storefront" }),
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", { children: activeProject.name })
-										] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [
-											String(activeProjectIndex + 1).padStart(2, "0"),
-											" / ",
-											projects.length
-										] })]
+										] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "workbench-actions",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [
+												String(activeProjectIndex + 1).padStart(2, "0"),
+												" / ",
+												projects.length
+											] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+												className: "preview-close",
+												type: "button",
+												variant: "ghost",
+												size: "icon",
+												"aria-label": "Close live preview",
+												title: "Close live preview",
+												onClick: closeProjectPreview,
+												children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { size: 16 })
+											})]
+										})]
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 										className: "workbench-controls",

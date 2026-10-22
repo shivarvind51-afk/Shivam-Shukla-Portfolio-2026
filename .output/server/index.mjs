@@ -19,37 +19,44 @@ var public_assets_data_default = {
 	"/favicon.ico": {
 		"type": "image/vnd.microsoft.icon",
 		"etag": "\"4f95-3RXc3p2mhEAs1WBwaIvE0Y0uu0Y\"",
-		"mtime": "2026-10-22T19:20:24.832Z",
+		"mtime": "2026-10-22T20:34:34.168Z",
 		"size": 20373,
 		"path": "../public/favicon.ico"
+	},
+	"/favicon.svg": {
+		"type": "image/svg+xml",
+		"etag": "\"136-Sw0z3B/t+qRA460XFXxWDrh+1ts\"",
+		"mtime": "2026-10-22T20:34:34.167Z",
+		"size": 310,
+		"path": "../public/favicon.svg"
 	},
 	"/robots.txt": {
 		"type": "text/plain; charset=utf-8",
 		"etag": "\"a0-CKGXSIe7TSsqDTmGm/nY1t/o5d0\"",
-		"mtime": "2026-10-22T19:20:24.832Z",
+		"mtime": "2026-10-22T20:34:34.167Z",
 		"size": 160,
 		"path": "../public/robots.txt"
 	},
-	"/assets/routes-CRsI7GZ6.js": {
+	"/assets/routes-wh0WLYUX.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"d120-sT/tN3bYktWC/NPYk0q2cDB3t6c\"",
-		"mtime": "2026-10-22T19:20:24.685Z",
-		"size": 53536,
-		"path": "../public/assets/routes-CRsI7GZ6.js"
+		"etag": "\"d614-X2FDzUqjD0IRReVsIYxmhLtL/i0\"",
+		"mtime": "2026-10-22T20:34:33.980Z",
+		"size": 54804,
+		"path": "../public/assets/routes-wh0WLYUX.js"
 	},
-	"/assets/styles-B9b8stnB.css": {
+	"/assets/styles-Bbg8lxwB.css": {
 		"type": "text/css; charset=utf-8",
-		"etag": "\"15084-KLr3benlu12YBxjJ2bz5ul/ioNg\"",
-		"mtime": "2026-10-22T19:20:24.685Z",
-		"size": 86148,
-		"path": "../public/assets/styles-B9b8stnB.css"
+		"etag": "\"158cd-d5fF0vnnU+ytsViBFs9dR10CBAY\"",
+		"mtime": "2026-10-22T20:34:33.980Z",
+		"size": 88269,
+		"path": "../public/assets/styles-Bbg8lxwB.css"
 	},
-	"/assets/index-BXLp4h2p.js": {
+	"/assets/index-BnItpkWN.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"52fae-Vd9dGjI8ia7REG8Lg/6gPHcBly4\"",
-		"mtime": "2026-10-22T19:20:24.685Z",
-		"size": 339886,
-		"path": "../public/assets/index-BXLp4h2p.js"
+		"etag": "\"52fe4-064S6VV/IcFjE9uYz6rdeLJllOY\"",
+		"mtime": "2026-10-22T20:34:33.980Z",
+		"size": 339940,
+		"path": "../public/assets/index-BnItpkWN.js"
 	}
 };
 //#endregion

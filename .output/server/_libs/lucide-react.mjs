@@ -187,6 +187,21 @@ var ExternalLink = createLucideIcon("external-link", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Eye = createLucideIcon("eye", [["path", {
+	d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",
+	key: "1nclc0"
+}], ["circle", {
+	cx: "12",
+	cy: "12",
+	r: "3",
+	key: "1v7zrd"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Laptop = createLucideIcon("laptop", [["path", {
 	d: "M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z",
 	key: "1pdavp"
@@ -291,5 +306,18 @@ var Tablet = createLucideIcon("tablet", [["rect", {
 	y2: "18",
 	key: "1dp563"
 }]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var X = createLucideIcon("x", [["path", {
+	d: "M18 6 6 18",
+	key: "1bl5f8"
+}], ["path", {
+	d: "m6 6 12 12",
+	key: "d8bk6v"
+}]]);
 //#endregion
-export { MapPin as a, ExternalLink as c, ArrowDown as d, MoveRight as i, Earth as l, Smartphone as n, Mail as o, RotateCw as r, Laptop as s, Tablet as t, ArrowUpRight as u };
+export { MoveRight as a, Laptop as c, Earth as d, ArrowUpRight as f, RotateCw as i, Eye as l, Tablet as n, MapPin as o, ArrowDown as p, Smartphone as r, Mail as s, X as t, ExternalLink as u };

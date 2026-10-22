@@ -3,10 +3,10 @@ import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].
 import { _ as createFileRoute, b as useRouter, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRouteWithContext, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as require_jsx_runtime, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-Bba7iPNI.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CDuFkpqo.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-DY_wpWnn.css";
+var styles_default = "/assets/styles-K-ROkv25.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -144,6 +144,11 @@ var Route$1 = createRootRouteWithContext()({
 			},
 			{
 				rel: "icon",
+				href: "/favicon.svg",
+				type: "image/svg+xml"
+			},
+			{
+				rel: "icon",
 				href: "/favicon.ico",
 				type: "image/x-icon"
 			}
@@ -167,7 +172,7 @@ function RootComponent() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
 	});
 }
-var $$splitComponentImporter = () => import("./routes-B-4-VtiN.mjs");
+var $$splitComponentImporter = () => import("./routes-KUyvzFYd.mjs");
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({
 	head: () => ({ meta: [
 		{ title: "Shivam Shukla — Senior Shopify Developer" },
