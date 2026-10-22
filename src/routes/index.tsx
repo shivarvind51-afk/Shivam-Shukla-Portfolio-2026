@@ -215,7 +215,7 @@ function Portfolio() {
           <div className="hero-kicker"><span>Senior Shopify Developer</span><span>Delhi, India</span></div>
           <div className="hero-copy">
             <h1><span>SHIVAM</span><span className="outline-word">SHUKLA</span></h1>
-            <div className="typing-line"><span>{typedRole}</span><b aria-hidden="true" /></div>
+            <div className="typing-line"><span>WEBSITE ENGINEER</span><b aria-hidden="true" /></div>
           </div>
           <div className="hero-bottom">
             <p>I engineer high-converting commerce experiences—from custom Liquid architecture to scalable apps and international storefronts.</p>
