@@ -16,40 +16,40 @@ globalThis.__nitro_vite_envs__ = services;
 //#endregion
 //#region #nitro/virtual/public-assets-data
 var public_assets_data_default = {
-	"/robots.txt": {
-		"type": "text/plain; charset=utf-8",
-		"etag": "\"a0-CKGXSIe7TSsqDTmGm/nY1t/o5d0\"",
-		"mtime": "2026-10-01T22:51:19.661Z",
-		"size": 160,
-		"path": "../public/robots.txt"
-	},
 	"/favicon.ico": {
 		"type": "image/vnd.microsoft.icon",
 		"etag": "\"4f95-3RXc3p2mhEAs1WBwaIvE0Y0uu0Y\"",
-		"mtime": "2026-10-01T22:51:19.661Z",
+		"mtime": "2026-10-22T19:20:24.832Z",
 		"size": 20373,
 		"path": "../public/favicon.ico"
 	},
-	"/assets/styles-B1bBhU2s.css": {
+	"/robots.txt": {
+		"type": "text/plain; charset=utf-8",
+		"etag": "\"a0-CKGXSIe7TSsqDTmGm/nY1t/o5d0\"",
+		"mtime": "2026-10-22T19:20:24.832Z",
+		"size": 160,
+		"path": "../public/robots.txt"
+	},
+	"/assets/routes-CRsI7GZ6.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"d120-sT/tN3bYktWC/NPYk0q2cDB3t6c\"",
+		"mtime": "2026-10-22T19:20:24.685Z",
+		"size": 53536,
+		"path": "../public/assets/routes-CRsI7GZ6.js"
+	},
+	"/assets/styles-B9b8stnB.css": {
 		"type": "text/css; charset=utf-8",
-		"etag": "\"14f3d-dcaPs+TiAykYJwypRIERRbwG6tE\"",
-		"mtime": "2026-10-01T22:51:19.521Z",
-		"size": 85821,
-		"path": "../public/assets/styles-B1bBhU2s.css"
+		"etag": "\"15084-KLr3benlu12YBxjJ2bz5ul/ioNg\"",
+		"mtime": "2026-10-22T19:20:24.685Z",
+		"size": 86148,
+		"path": "../public/assets/styles-B9b8stnB.css"
 	},
-	"/assets/routes-vonL6w8K.js": {
+	"/assets/index-BXLp4h2p.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"d082-UaA10HDVmCqUYgpy/q0a7H0lRCk\"",
-		"mtime": "2026-10-01T22:51:19.521Z",
-		"size": 53378,
-		"path": "../public/assets/routes-vonL6w8K.js"
-	},
-	"/assets/index-D3l5CxFs.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"52fae-A8hD4yVsa0dP0X0vyBbFn32Y0fM\"",
-		"mtime": "2026-10-01T22:51:19.520Z",
+		"etag": "\"52fae-Vd9dGjI8ia7REG8Lg/6gPHcBly4\"",
+		"mtime": "2026-10-22T19:20:24.685Z",
 		"size": 339886,
-		"path": "../public/assets/index-D3l5CxFs.js"
+		"path": "../public/assets/index-BXLp4h2p.js"
 	}
 };
 //#endregion

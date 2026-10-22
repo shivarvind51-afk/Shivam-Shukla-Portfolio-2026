@@ -5,7 +5,7 @@ import { a as MapPin, c as ExternalLink, d as ArrowDown, i as MoveRight, l as Ea
 import { t as Slot } from "../_libs/radix-ui__react-slot.mjs";
 import { n as clsx, t as cva } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BiZJqCHX.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-B-4-VtiN.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function cn(...inputs) {
@@ -57,7 +57,8 @@ var projects = [
 		type: "Wellness",
 		scope: "Complete design & development",
 		detail: "From-zero UX, theme architecture, subscription collections, product pages and a conversion-ready checkout journey.",
-		url: "https://boka.com"
+		url: "https://boka.com",
+		embeddable: false
 	},
 	{
 		name: "Milano Wigs",
@@ -67,11 +68,11 @@ var projects = [
 		url: "https://milanowigs.com"
 	},
 	{
-		name: "Taza Chocolate",
-		type: "Food & Beverage",
-		scope: "Complete store build",
-		detail: "Custom Liquid storefront balancing a media-rich product catalog with fast load times and responsive architecture.",
-		url: "https://tazachocolate.com"
+		name: "The Bare Bar",
+		type: "Wellness",
+		scope: "Theme customization",
+		detail: "Sleek-theme customization aligned to a considered wellness positioning.",
+		url: "https://thebarebar.in"
 	},
 	{
 		name: "Mookuthi",
@@ -79,13 +80,6 @@ var projects = [
 		scope: "International store build",
 		detail: "US storefront with Markets localization, Razorpay Magic Checkout, Google Login, PDF downloads and consultation booking. Added interactive Add to cart % Buy Now buttons on the product page.",
 		url: "https://mookuthi.com"
-	},
-	{
-		name: "PotGang",
-		type: "Home & Lifestyle",
-		scope: "Complete store build",
-		detail: "End-to-end UK launch with custom theme sections, collection structure, performance and technical SEO.",
-		url: "https://potgang.co.uk"
 	},
 	{
 		name: "AZGA",
@@ -144,18 +138,11 @@ var projects = [
 		url: "https://egoss.in"
 	},
 	{
-		name: "LeShva",
-		type: "Fashion",
+		name: "Saunakits",
+		type: "Outdoor Furnitures",
 		scope: "Custom development",
-		detail: "Custom Shopify development delivered on the Envy theme.",
-		url: "https://leshva.com"
-	},
-	{
-		name: "The Bare Bar",
-		type: "Wellness",
-		scope: "Theme customization",
-		detail: "Sleek-theme customization aligned to a considered wellness positioning.",
-		url: "https://thebarebar.in"
+		detail: "Custom Shopify development delivered on the custom theme.",
+		url: "https://saunakits.com/?"
 	},
 	{
 		name: "Drizz",
@@ -179,21 +166,14 @@ var projects = [
 		url: "https://earthrhythm.com"
 	},
 	{
-		name: "Traya Health",
-		type: "Wellness",
-		scope: "Maintenance & performance",
-		detail: "Ongoing optimization and store-health monitoring on the Refresh theme.",
-		url: "https://traya.health"
-	},
-	{
-		name: "Suta",
+		name: "LeShva",
 		type: "Fashion",
-		scope: "Web development",
-		detail: "Shopify web development contributions across the live fashion storefront.",
-		url: "https://suta.in"
+		scope: "Custom development",
+		detail: "Custom Shopify development delivered on the Envy theme.",
+		url: "https://leshva.com"
 	},
 	{
-		name: "CuddleFields",
+		name: "Cuddle Fields",
 		type: "Kids' Fashion",
 		scope: "Custom development",
 		detail: "Custom Shopify development delivered on the Capital theme.",
@@ -580,7 +560,7 @@ function Portfolio() {
 													}, device.id);
 												})
 											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+											activeProject.embeddable !== false && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 												variant: "ghost",
 												size: "icon",
 												"aria-label": "Reload live website",
@@ -607,33 +587,53 @@ function Portfolio() {
 										className: `live-device live-${activeDevice}`,
 										children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											className: "live-browser",
-											children: [
-												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-													className: "browser-chrome",
-													children: [
-														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {}),
-														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {}),
-														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {}),
-														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: activeProject.url.replace("https://", "") })
-													]
-												}),
-												previewLoading && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-													className: "preview-loader",
-													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Loading ", activeProject.name] })]
-												}),
-												activeProject && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("iframe", {
-													src: activeProject.url,
-													title: `${activeProject.name} live website preview`,
-													loading: "lazy",
-													onLoad: () => setPreviewLoading(false),
-													referrerPolicy: "no-referrer-when-downgrade"
-												}, `${activeProject.name}-${previewKey}`)
-											]
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "browser-chrome",
+												children: [
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {}),
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {}),
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {}),
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: activeProject.url.replace("https://", "") })
+												]
+											}), activeProject.embeddable === false ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "flex h-[calc(100%-29px)] flex-col items-center justify-center gap-4 px-8 text-center",
+												children: [
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Earth, {
+														className: "text-[var(--primary)]",
+														size: 28
+													}),
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+														className: "max-w-xs text-sm text-[var(--muted-foreground)]",
+														children: "This storefront does not allow embedded previews. Open it in a new tab to explore the live site."
+													}),
+													/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+														className: "inline-flex items-center gap-2 text-xs font-bold uppercase text-[var(--foreground)]",
+														href: activeProject.url,
+														target: "_blank",
+														rel: "noreferrer",
+														children: [
+															"Visit ",
+															activeProject.name,
+															" ",
+															/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { size: 14 })
+														]
+													})
+												]
+											}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [previewLoading && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "preview-loader",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Loading ", activeProject.name] })]
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("iframe", {
+												src: activeProject.url,
+												title: `${activeProject.name} live website preview`,
+												loading: "lazy",
+												onLoad: () => setPreviewLoading(false),
+												referrerPolicy: "no-referrer-when-downgrade"
+											}, `${activeProject.name}-${previewKey}`)] })]
 										})
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 										className: "embed-note",
-										children: "Some stores protect against embedded viewing. If a preview stays blank, use the open-site arrow."
+										children: activeProject.embeddable === false ? "Embedded preview is unavailable for this storefront; open the site in a new tab." : "Some stores protect against embedded viewing. If a preview stays blank, use the open-site arrow."
 									})
 								]
 							})]

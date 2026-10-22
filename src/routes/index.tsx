@@ -31,15 +31,24 @@ const roles = [
   "APP BUILDER.",
 ];
 
-const projects = [
-  { name: "Boka Wellness", type: "Wellness", scope: "Complete design & development", detail: "From-zero UX, theme architecture, subscription collections, product pages and a conversion-ready checkout journey.", url: "https://boka.com" },
+interface Project {
+  name: string;
+  type: string;
+  scope: string;
+  detail: string;
+  url: string;
+  embeddable?: boolean;
+}
+
+const projects: Project[] = [
   { name: "Milano Wigs", type: "Beauty & Fashion", scope: "Complete design & development", detail: "Custom product and collection templates for a complex variant catalog, built around performance and mobile UX.", url: "https://milanowigs.com" },
    { name: "The Bare Bar", type: "Wellness", scope: "Theme customization", detail: "Sleek-theme customization aligned to a considered wellness positioning.", url: "https://thebarebar.in" },
   { name: "Mookuthi", type: "Jewellery", scope: "International store build", detail: "US storefront with Markets localization, Razorpay Magic Checkout, Google Login, PDF downloads and consultation booking. Added interactive Add to cart % Buy Now buttons on the product page.", url: "https://mookuthi.com" },
-  
-  { name: "AZGA", type: "Jewellery", scope: "Mega menu, CRO & redesign", detail: "A custom catalog navigation system paired with conversion work and a complete visual storefront revamp.", url: "https://azga.in" },
+   { name: "AZGA", type: "Jewellery", scope: "Mega menu, CRO & redesign", detail: "A custom catalog navigation system paired with conversion work and a complete visual storefront revamp.", url: "https://azga.in" },
   { name: "Meera's Plus Size Store", type: "Fashion", scope: "Sale experience", detail: "Dynamic filters, price-reveal logic, wishlist, login restrictions and Boost Commerce collection search.", url: "https://meerasplussizestore.com" },
   { name: "Taho Living", type: "Furniture", scope: "Complete store build", detail: "From-scratch theme development with custom sections, responsive collection structure, SEO and performance work.", url: "https://taholiving.com" },
+   { name: "Boka Wellness", type: "Wellness", scope: "Complete design & development", detail: "From-zero UX, theme architecture, subscription collections, product pages and a conversion-ready checkout journey.", url: "https://boka.com", embeddable: false },
+
   { name: "Gillori", type: "Fashion", scope: "Complete store build", detail: "A full end-to-end Shopify build delivered on the Sleek theme architecture.", url: "https://gillori.com" },
   { name: "Keemti Jewels", type: "Jewellery", scope: "Website development", detail: "Luxury storefront with a custom pre-cart lead popup that creates a customer record before checkout.", url: "https://keemtijewels.com" },
   { name: "Ruhe India", type: "Home & Lifestyle", scope: "Management & CRO", detail: "Continuous testing, storefront updates, conversion improvements and technical SEO supporting D2C growth.", url: "https://ruheindia.com" },
@@ -248,26 +257,57 @@ function Portfolio() {
                     );
                   })}
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Reload live website" title="Reload website" onClick={() => setPreviewKey((value) => value + 1)}><RotateCw size={16} /></Button>
+                {activeProject.embeddable !== false && (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    aria-label="Reload live website"
+                    title="Reload website"
+                    onClick={() => setPreviewKey((value) => value + 1)}
+                  >
+                    <RotateCw size={16} />
+                  </Button>
+                )}
                 <Button variant="ghost" size="icon" asChild aria-label="Open website in a new tab" title="Open in new tab"><a href={activeProject.url} target="_blank" rel="noreferrer"><ExternalLink size={16} /></a></Button>
               </div>
               <div className={`live-device live-${activeDevice}`}>
                 <div className="live-browser">
                   <div className="browser-chrome"><i /><i /><i /><span>{activeProject.url.replace("https://", "")}</span></div>
-                  {previewLoading && <div className="preview-loader"><b /><span>Loading {activeProject.name}</span></div>}
-                  {activeProject && (
-                    <iframe
-                      key={`${activeProject.name}-${previewKey}`}
-                      src={activeProject.url}
-                      title={`${activeProject.name} live website preview`}
-                      loading="lazy"
-                      onLoad={() => setPreviewLoading(false)}
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
+                  {activeProject.embeddable === false ? (
+                    <div className="flex h-[calc(100%-29px)] flex-col items-center justify-center gap-4 px-8 text-center">
+                      <Globe2 className="text-[var(--primary)]" size={28} />
+                      <p className="max-w-xs text-sm text-[var(--muted-foreground)]">
+                        This storefront does not allow embedded previews. Open it in a new tab to explore the live site.
+                      </p>
+                      <a
+                        className="inline-flex items-center gap-2 text-xs font-bold uppercase text-[var(--foreground)]"
+                        href={activeProject.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Visit {activeProject.name} <ExternalLink size={14} />
+                      </a>
+                    </div>
+                  ) : (
+                    <>
+                      {previewLoading && <div className="preview-loader"><b /><span>Loading {activeProject.name}</span></div>}
+                      <iframe
+                        key={`${activeProject.name}-${previewKey}`}
+                        src={activeProject.url}
+                        title={`${activeProject.name} live website preview`}
+                        loading="lazy"
+                        onLoad={() => setPreviewLoading(false)}
+                        referrerPolicy="no-referrer-when-downgrade"
+                      />
+                    </>
                   )}
                 </div>
               </div>
-              <p className="embed-note">Some stores protect against embedded viewing. If a preview stays blank, use the open-site arrow.</p>
+              <p className="embed-note">
+                {activeProject.embeddable === false
+                  ? "Embedded preview is unavailable for this storefront; open the site in a new tab."
+                  : "Some stores protect against embedded viewing. If a preview stays blank, use the open-site arrow."}
+              </p>
             </aside>
           </div>
         </section>
