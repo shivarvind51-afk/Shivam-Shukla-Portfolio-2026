@@ -1,5 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, ExternalLink, Globe2, Laptop, Mail, MapPin, MoveRight, RotateCw, Smartphone, Tablet } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  ExternalLink,
+  Eye,
+  Globe2,
+  Laptop,
+  Mail,
+  MapPin,
+  MoveRight,
+  RotateCw,
+  Smartphone,
+  Tablet,
+  X,
+} from "lucide-react";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -105,12 +119,35 @@ function Portfolio() {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [previewKey, setPreviewKey] = useState(0);
   const [previewLoading, setPreviewLoading] = useState(true);
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const activeProject = projects[activeProjectIndex] ?? {
     name: "Boka Wellness",
     type: "Wellness",
     scope: "Complete design & development",
     detail: "From-zero UX, theme architecture, subscription collections, product pages and a conversion-ready checkout journey.",
     url: "https://boka.com",
+  };
+
+  const showProjectPreview = (index: number) => {
+    setActiveProjectIndex(index);
+    setIsPreviewOpen(true);
+    if (window.matchMedia("(max-width: 1260px)").matches) {
+      window.requestAnimationFrame(() => {
+        document.getElementById("live-preview")?.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    }
+  };
+
+  const closeProjectPreview = () => {
+    setIsPreviewOpen(false);
+    if (window.matchMedia("(max-width: 1260px)").matches) {
+      window.requestAnimationFrame(() => {
+        document.querySelector<HTMLElement>(`[data-project-index="${activeProjectIndex}"]`)?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      });
+    }
   };
 
   useEffect(() => {
@@ -136,6 +173,7 @@ function Portfolio() {
     const chapters = root.querySelectorAll<HTMLElement>("[data-project-index]");
     const observer = new IntersectionObserver(
       (entries) => {
+        if (isPreviewOpen) return;
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -147,7 +185,7 @@ function Portfolio() {
     );
     chapters.forEach((chapter) => observer.observe(chapter));
     return () => observer.disconnect();
-  }, []);
+  }, [isPreviewOpen]);
 
   useEffect(() => {
     setPreviewLoading(true);
@@ -213,7 +251,7 @@ function Portfolio() {
             <p>Keep scrolling. Each chapter brings a new live storefront into focus—without taking you away from the portfolio.</p>
           </div>
 
-          <div className="project-story">
+          <div className={`project-story ${isPreviewOpen ? "preview-is-open" : ""}`}>
             <div className="project-chapters">
               {projects.map((project, index) => (
                 <article
@@ -227,15 +265,42 @@ function Portfolio() {
                   <h3>{project.name}</h3>
                   <p>{project.detail}</p>
                   <div className="chapter-impact"><strong>THE BUILD</strong><span>Purposeful interaction, clear hierarchy and commerce engineering working as one connected system.</span></div>
-                  <a href={project.url} target="_blank" rel="noreferrer">Visit live website <ArrowUpRight size={16} /></a>
+                  <div className="project-actions">
+                    <a href={project.url} target="_blank" rel="noreferrer">Visit live website <ArrowUpRight size={16} /></a>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      className="project-preview-trigger"
+                      aria-controls="live-preview"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        showProjectPreview(index);
+                      }}
+                    >
+                      <Eye size={16} /> Preview
+                    </Button>
+                  </div>
                 </article>
               ))}
             </div>
 
-            <aside className="live-workbench" aria-live="polite">
+            <aside id="live-preview" className="live-workbench" aria-live="polite">
               <div className="workbench-topline">
                 <div><Globe2 size={14} /><span>Live storefront</span><b>{activeProject.name}</b></div>
-                <span>{String(activeProjectIndex + 1).padStart(2, "0")} / {projects.length}</span>
+                <div className="workbench-actions">
+                  <span>{String(activeProjectIndex + 1).padStart(2, "0")} / {projects.length}</span>
+                  <Button
+                    className="preview-close"
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    aria-label="Close live preview"
+                    title="Close live preview"
+                    onClick={closeProjectPreview}
+                  >
+                    <X size={16} />
+                  </Button>
+                </div>
               </div>
               <div className="workbench-controls">
                 <div className="device-tabs" role="tablist" aria-label="Select preview device">
